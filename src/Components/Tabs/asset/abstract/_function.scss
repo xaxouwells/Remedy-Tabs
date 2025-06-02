@@ -1,0 +1,15 @@
+@function generate-list($start, $end, $gap) {
+    $result: (); // Liste vide initiale
+    // Vérification de $gap
+    @if $gap <= 0 { 
+        @error "Le paramètre $gap doit être supérieur à 0.";
+    }
+    // Boucle pour remplir la liste
+    $value: $start;
+    @while $value <= $end {
+        $result: append($result, $value, comma);
+        $value: $value + $gap; // Incrément par $gap
+    }
+    
+    @return $result;
+}

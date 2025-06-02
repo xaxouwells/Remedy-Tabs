@@ -1,0 +1,4 @@
+@use './function' as *;
+
+
+$percentage-list-options: generate-list(0, 100, 1);
