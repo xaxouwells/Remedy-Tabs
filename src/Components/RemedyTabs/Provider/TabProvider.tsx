@@ -5,7 +5,7 @@ export interface LazyComponentProps {
 }
 export type tabs =
   | {
-      id: number;
+      id: string;
       type: 'lazy';
       title?: string;
       icon?: React.ReactNode;
@@ -14,7 +14,7 @@ export type tabs =
       suspenseComponent: React.ReactNode;
     }
   | {
-      id: number;
+      id: string;
       type: 'normal';
       title?: string;
       icon?: React.ReactNode;

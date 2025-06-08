@@ -31,6 +31,7 @@ export default function TabBar(props:TabBarProps) {
             <ul
               className={'tab-bar__tab-container'} 
               ref={tabContainer}
+              role="tablist"
             >
               <div className={'tab-bar__controller'} ref={controllerSwitch} role='button' tabIndex={0} ></div>
                 {allTabs.map((item,index)=> {

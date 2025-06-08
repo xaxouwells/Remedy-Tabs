@@ -1,31 +1,32 @@
 import SuspenseComponent from './Components/SuspenseComponent/SuspenseComponent';
-import Tabs from './Components/Tabs/Tabs.tsx';
-import type { tabs } from './Components/Tabs/Provider/TabProvider.tsx';
+import Tabs from './Components/RemedyTabs/RemedyTabs.tsx';
+import type { tabs } from './Components/RemedyTabs/Provider/TabProvider.tsx';
+import RemedyTabs from './Components/RemedyTabs/RemedyTabs.tsx';
 
 const allTabs: tabs[] = [
   {
-    id: 1,
-    title: 'Bonjour je suis Tab1',
+    id: 'Bonjour1',
+    title: 'Bonjour1',
     type: 'lazy',
     lazyComponent:()=> import('./Components/ComponentTets/TestOne.tsx'),
     suspenseComponent: <SuspenseComponent/>,
   },
   {
-    id: 2,
-    title: 'Hello Im Tab2',
+    id: 'HelloUno',
+    title: 'HelloUno',
     type: 'lazy',
     lazyComponent:()=> import('./Components/ComponentTets/TestTwo.tsx'),
     suspenseComponent: <SuspenseComponent/>
   },
   {
-    id: 3,
+    id: "Hello tab3",
     title: 'Holla Tab3',
     type: 'lazy',
     lazyComponent:()=> import('./Components/ComponentTets/TestThree.tsx'),
     suspenseComponent: <SuspenseComponent/>
   },
   {
-    id: 4,
+    id: 'Coucou tab4',
     title: 'Coucou Tab4',
     type: 'lazy', // Explicitly specify the type
     lazyComponent:()=> import('./Components/ComponentTets/TestFourth.tsx'),
@@ -45,7 +46,7 @@ export default function App() {
         justifyContent: 'center',
       }}
     >
-      <Tabs
+      <RemedyTabs
         tabBarWidthType='no-fit'
         tabBarWidth={100}
         allTabs={allTabs}

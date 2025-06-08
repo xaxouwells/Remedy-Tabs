@@ -19,7 +19,7 @@ type TabsProps = | {
   scrollFromBreakPoint?: number;
 } 
 
-export default function Tabs(props: TabsProps) {
+export default function RemedyTabs(props: TabsProps) {
   const {allTabs, scrollable, tabBarWidthType, scrollBehavior, scrollFromBreakPoint } = props;
 
   console.log('tabs render');

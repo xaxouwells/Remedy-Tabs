@@ -1,10 +1,10 @@
 import React, { Suspense, lazy, useMemo } from 'react';
 import { useTabStateContext, type tabs } from '../Provider/TabProvider';
-export default function TabContent({ allTabs, tabContentWidth, tabContentHeight }: { allTabs: tabs[], tabContentWidth: number, tabContentHeight: number }) {
+export default function TabContent({ allTabs }: { allTabs: tabs[] }) {
   const { currentIndex } = useTabStateContext();
   
   return (
-    <div className={`tab-content__container  w-${tabContentWidth} h-${tabContentHeight}`}>
+    <div className={`tab-content__container`}>
       <div
         className={'tab-content__wrapper'}
         style={{ transform: `translate3d(-${currentIndex * 100}%, 0px, 0px)` }}
@@ -13,6 +13,9 @@ export default function TabContent({ allTabs, tabContentWidth, tabContentHeight 
           <div
             key={item.id}
             className={currentIndex === index ? 'tab-content__active-content' : 'tab-content__inactive-content'}
+            role="tabpanel"
+            id={item.id}
+            aria-selected={currentIndex === index ? true : false}
           >
             <Content tab={item} index={index} currentIndex={currentIndex} />
           </div>
